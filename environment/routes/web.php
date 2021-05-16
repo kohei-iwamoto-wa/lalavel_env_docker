@@ -26,3 +26,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('todo', [App\Http\Controllers\TodoController::class, 'index'])->name('todo');
+Route::middleware(['auth:sanctum', 'verified'])->get('create', [App\Http\Controllers\TodoController::class, 'createTodo']);
+Route::middleware(['auth:sanctum', 'verified'])->get('submit', [App\Http\Controllers\TodoController::class, 'submit']);
