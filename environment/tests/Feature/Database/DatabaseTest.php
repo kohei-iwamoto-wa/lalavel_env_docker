@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 use App\Models\Todos;
-
+//https://noumenon-th.net/programming/2020/03/04/laravel-phpunit/
 class DatabaseTest extends TestCase
 {
     // RefreshDatabaseを使用するとテスト後、データを削除してくれる。
@@ -32,6 +32,7 @@ class DatabaseTest extends TestCase
         $todo = [
             'todo' => 'sss'
         ];
+        Todos::factory()->create($todo);
         $this->assertDatabaseHas('todos', $todo);
     }
 }
