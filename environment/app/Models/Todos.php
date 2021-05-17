@@ -11,7 +11,7 @@ class Todos extends Model
 
     protected $fillable = [
         'todo',
-        'user_id'
+        'user_id',
     ];
 
     public function user()
