@@ -21,4 +21,3 @@ class SampleTest extends TestCase
         $this->assertEquals(2, $sum);
     }
 }
-

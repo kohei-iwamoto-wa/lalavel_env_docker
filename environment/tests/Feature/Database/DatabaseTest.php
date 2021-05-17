@@ -10,6 +10,8 @@ use App\Models\Todos;
 
 class DatabaseTest extends TestCase
 {
+    // RefreshDatabaseを使用するとテスト後、データを削除してくれる。
+    // use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -22,5 +24,14 @@ class DatabaseTest extends TestCase
         $todo->user_id = 21;
         $saveTodo = $todo->save();
         $this->assertTrue($saveTodo);
+    }
+
+    // すでにテストデータベースにデータが登録されている場合のテストコード
+    public function testExistDatabase()
+    {
+        $todo = [
+            'todo' => 'sss'
+        ];
+        $this->assertDatabaseHas('todos', $todo);
     }
 }
